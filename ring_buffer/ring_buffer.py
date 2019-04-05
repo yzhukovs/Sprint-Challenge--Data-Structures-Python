@@ -14,6 +14,6 @@ class RingBuffer:
 
   def get(self):
     result = self.storage[0:self.current] + self.storage[self.current:self.capacity]
-    result = [e for e in result if e != None]
+    result = [e for e in result if e != None] #0(1)
     return result
     #pass
