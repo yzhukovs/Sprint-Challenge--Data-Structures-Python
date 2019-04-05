@@ -12,7 +12,7 @@ f.close()
 
 duplicates = []
 # for name_1 in names_1:
-#     for name_2 in names_2:   #runtime: 7.575293064117432 seconds
+#     for name_2 in names_2:   #runtime: 7.575293064117432 seconds   O(n^2)
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
@@ -28,8 +28,10 @@ duplicates = []
 # #runtime: 0.005610942840576172 seconds
 
 #USING SET() ------------------------
-duplicates = set(names_1) & set(names_2)
+duplicates = set(names_1) & set(names_2)   #O(n) worse case 
 #runtime: 0.004784107208251953 seconds
+#it seems that the fastest way is to use a set() to store the names then check the set() to see if it contains the names that we're looking for.
+
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
